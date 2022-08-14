@@ -14,26 +14,30 @@ public class jumper {
         for (String i : jump){
             jumper.add(Integer.parseInt(i));
         }
+        jumper.remove(jumper.get(0));
+        // System.out.println(jumper);
         for (int i = 0; i < jumper.size() - 2; i++){
             
            
             if (jumper.get(i)>jumper.get(i+1)){
                 count1 = jumper.get(i)-jumper.get(i+1);
             }
-            if (jumper.get(i)<jumper.get(i+1)){
+            if (jumper.get(i)<=jumper.get(i+1)){
                 count1 = jumper.get(i+1)-jumper.get(i);
             }
             if (jumper.get(i+1)>jumper.get(i+2)){
                 count2 = jumper.get(i+1)-jumper.get(i+2);
             }
-            if (jumper.get(i+2)>jumper.get(i+1)){
+            if (jumper.get(i+2)>=jumper.get(i+1)){
                 count2 = jumper.get(i+2)-jumper.get(i+1);
             }
             
-            if (count1 - count2 > 1 || count2 - count1 > 1){
-                
+            if (count1 - count2 > 1 || count2 - count1 > 1 || count1 == count2 || count2 > count1){
+                // System.out.println(count1);
+                // System.out.println(count2);
                 notjoy += 1;
             }
+            
         }
         if(notjoy == 0){
             // System.out.println(notjoy);
